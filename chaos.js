@@ -19,7 +19,7 @@ function clearCanvas()
 
 function drawCircles()
 {
-    for (var i = 0; i<10;i++)
+    for (var i = 0; i<500;i++)
     {
         var x = Math.random()*windowWidth;
         var y = Math.random()*windowHeight;
