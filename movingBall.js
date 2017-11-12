@@ -75,7 +75,7 @@ var colorSelection =
 var randomX = Math.random()*canvasWidth;
 var randomY = Math.random()*canvasHeight;
 var randomColor =Math.floor(Math.random()*5);
-var randomSize = Math.random()*20+10;
+var randomSize = Math.random()*25+10;
 var randomXVel = Math.random()*40-20;
 var randomYVel = Math.random()*40-20;
 
