@@ -76,14 +76,14 @@ var colorSelection =
 
 var ballArray = [];
 
-for (var i= 0;i<500;i++)
+for (var i= 0;i<700;i++)
 {    
-    var randomSize = Math.random()*10;
+    var randomSize = Math.random()*5;
     var randomX = Math.floor(Math.random()*(canvasWidth-randomSize)+randomSize);
     var randomY = Math.floor(Math.random()*(canvasHeight-randomSize)+randomSize);
     var randomColor = colorSelection[Math.floor(Math.random()*5)];
-    var randomXVel = Math.floor(Math.random()*3+2);
-    var randomYVel = Math.floor(Math.random()*3+2);
+    var randomXVel = Math.random()*6-3;
+    var randomYVel = Math.random()*6-3;
     ballArray.push(new Circle(randomX,randomY,randomSize,randomColor,randomXVel,randomYVel));
 }
 
