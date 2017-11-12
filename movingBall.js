@@ -48,7 +48,7 @@ function Circle (xPos,yPos,radius,color,velX,velY)
     {
         context.beginPath();
         context.rect(0,0,canvasWidth,canvasHeight);
-        context.fillStyle = "red";
+        context.fillStyle = "black";
         context.fill();
         
     }
@@ -66,19 +66,21 @@ function Circle (xPos,yPos,radius,color,velX,velY)
 var colorSelection = 
 [
     "#957186",
-    "D9B8C4",
-    "703D57",
-    "402A2C",
-    "241715"
+    "#D9B8C4",
+    "#703D57",
+    "#402A2C",
+    "#241715"
 ]
 
 var randomX = Math.random()*canvasWidth;
 var randomY = Math.random()*canvasHeight;
-var randomColor = Math.floor(Math.random()*5);
-var randomSize = Math.random()*25;
+var randomColor =Math.floor(Math.random()*5);
+var randomSize = Math.random()*20+10;
+var randomXVel = Math.random()*40-20;
+var randomYVel = Math.random()*40-20;
 
 
-var ball = new Circle(50,50,20,"black",10,10);
+var ball = new Circle(randomX,randomY ,randomSize,colorSelection[randomColor],randomXVel,randomYVel);
 function drawScreen()
 {
     requestAnimationFrame(drawScreen);
