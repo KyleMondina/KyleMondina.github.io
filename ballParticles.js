@@ -71,17 +71,22 @@ var colorSelection =
     "#D0A3BF",
     "#C585B3",
     "#BC69AA",
-    "#AF42AE"
+    "#AF42AE",
+    "#35524A",
+    "#627C85",
+    "#779CAB",
+    "#A2E8DD",
+    "#32DE8A"
 ]
 
 var ballArray = [];
 
 for (var i= 0;i<700;i++)
 {    
-    var randomSize = Math.random()*5;
+    var randomSize = Math.random()*15;
     var randomX = Math.floor(Math.random()*(canvasWidth-randomSize)+randomSize);
     var randomY = Math.floor(Math.random()*(canvasHeight-randomSize)+randomSize);
-    var randomColor = colorSelection[Math.floor(Math.random()*5)];
+    var randomColor = colorSelection[Math.floor(Math.random()*colorSelection.length)];
     var randomXVel = Math.random()*6-3;
     var randomYVel = Math.random()*6-3;
     ballArray.push(new Circle(randomX,randomY,randomSize,randomColor,randomXVel,randomYVel));
@@ -100,13 +105,5 @@ function drawScreen()
     
 }
 drawScreen();
-function drawMultiple()
-{
-    
-    for (var i = 0; i<ballArray.length;i++)
-    {
-        ballArray[i].drawCircle();
-    }
-    
-}
+
 
