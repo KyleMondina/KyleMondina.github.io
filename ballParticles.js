@@ -67,16 +67,10 @@ function Circle (xPos,yPos,radius,color,velX,velY)
 
 var colorSelection = 
 [
-    "#D6BBC0",
-    "#D0A3BF",
-    "#C585B3",
-    "#BC69AA",
-    "#AF42AE",
-    "#35524A",
-    "#627C85",
-    "#779CAB",
-    "#A2E8DD",
-    "#32DE8A"
+    "#E5F4E3",
+    "#5DA9E9",
+    "#003F91",
+    "#6D326D"
 ]
 
 var ballArray = [];
