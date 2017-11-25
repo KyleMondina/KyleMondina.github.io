@@ -1,11 +1,3 @@
-var canvas = document.getElementById("canvas");
-
-
-var canvasWidth = canvas.width;
-var canvasHeight = canvas.height;
-
-
-
 const pie = 3.14;
 
 var context = canvas.getContext('2d');
@@ -14,7 +6,7 @@ function eraseCanvas()
 {
     context.beginPath();
     context.rect(0,0,canvasWidth,canvasHeight);
-    context.fillStyle = "#EDD297";
+    context.fillStyle = "white";
     context.fill();
         
 }
@@ -52,7 +44,8 @@ function Circle (xPos,yPos,radius,color,velX,velY)
         context.arc(this.xPos,this.yPos,this.radius,0,2*pie);
         context.fillStyle = this.color;
         context.fill();
-        
+        context.strokeStyle = "black";
+        context.stroke();
     }
    
     this.update = function()
@@ -66,20 +59,22 @@ function Circle (xPos,yPos,radius,color,velX,velY)
 
 var colorSelection = 
 [
-    "#744627"
-    
+    "#E5F4E3",
+    "#5DA9E9",
+    "#003F91",
+    "#6D326D"
 ]
 
 var ballArray = [];
 
-for (var i= 0;i<200;i++)
+for (var i= 0;i<700;i++)
 {    
-    var randomSize = Math.random()*5;
-    var randomX = Math.random()*(canvasWidth-randomSize*2)+randomSize;
-    var randomY = Math.random()*(canvasHeight-randomSize*2)+randomSize;
+    var randomSize = Math.random()*15;
+    var randomX = Math.floor(Math.random()*(canvasWidth-randomSize)+randomSize);
+    var randomY = Math.floor(Math.random()*(canvasHeight-randomSize)+randomSize);
     var randomColor = colorSelection[Math.floor(Math.random()*colorSelection.length)];
-    var randomXVel = Math.random()*2-1;
-    var randomYVel = Math.random()*2-1;
+    var randomXVel = Math.random()*6-3;
+    var randomYVel = Math.random()*6-3;
     ballArray.push(new Circle(randomX,randomY,randomSize,randomColor,randomXVel,randomYVel));
 }
 
