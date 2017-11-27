@@ -1,68 +1,59 @@
-
-
 body
 {
     font-family: "Comic Sans MS", cursive, sans-serif;
     margin: 0px;
-    background-color: #CC9F5D;
+    background-color: blanchedalmond;
     padding: 0px;
-    
 }
-
 #wrapper
 {
     width: 1200;
-    height: 100vh;
+    max-height:200%;
     margin-top: 0px;
     margin-bottom: 0px;
     margin-right: auto;
     margin-left: auto;
+    background-color: #CC9F5D;
     
-    
-    
-    
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-auto-rows:minmax(100px,auto);
+    grid-column-gap: 3px;
+    grid-row-gap: 3px;
+    grid-template-areas:
+        "header header header header"
+        
+        "first_canvas first_canvas canvas_experiments canvas_experiments"
+        
+        "basic_physics basic_physics second_canvas second_canvas"
+        
+        "refined_physics refined_physics second_canvas second_canvas"
+        
+        "games games games games"
+        ;
 }
-
-
-#canvas
+.canvases
 {
-    z-index:-1;
-    position: absolute;
     padding: 0px;
-    margin: 0px;
-    height: 100%;
-    width: 1200;
-    
-}
-#heading
-{
-    text-align: center;
-    background-color: #3F0909;
-    padding: 4px;
-}
-
-
-
-#heading h1, p
-{
-    color: #EDD297;
-    
-}
-
-.box
-{
-    
-    background-color: #3F0909;
-    width: 20%;
-    display: inline-block;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-right:3%;
-    margin-left:3%;
     border-color: "black";
     border-width: 4px;
     border-style: solid;
-    padding: 10;
+    margin:0px;
+}
+#canvas
+{
+    width: 100%;
+    height: 100%;
+}
+.box
+{
+    background-color: #3F0909;
+    height: 150px;
+    border-color: "black";
+    border-width: 4px;
+    border-style: solid;
+    padding-bottom: 20px;
+    margin:0px;
 }
 .box h2
 {
@@ -73,4 +64,44 @@ body
     color:#D8A91C;
     text-decoration: none;
     list-style-position: inside;
+}
+.box a[href]
+{
+    color:#D8A91C;
+    text-decoration-line: none;
+}
+#heading
+{
+    text-align: center;
+    background-color: #3F0909;
+    padding: 4px;
+    grid-area: header;
+}
+#heading h1, p
+{
+    color: #EDD297;
+}
+#first_canvas
+{
+    grid-area:first_canvas;
+}
+#canvas_experiment
+{
+    grid-area:canvas_experiments;
+}
+#basic_physics
+{
+    grid-area:basic_physics;
+}
+#refined_physics
+{
+    grid-area:refined_physics;
+}
+#second_canvas
+{
+    grid-area:second_canvas;
+}
+#games
+{
+    grid-area:games;
 }
